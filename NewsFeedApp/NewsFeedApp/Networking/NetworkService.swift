@@ -19,7 +19,7 @@ final class NetworkService {
     }
     
    public func fetchArticles(with request: ArticlesRequest,
-                       offset: Int,
+                       offset: Int = 0,
                        completion: @escaping (Result<[Article], DataResponseError>) -> Void) {
         
         let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.path))

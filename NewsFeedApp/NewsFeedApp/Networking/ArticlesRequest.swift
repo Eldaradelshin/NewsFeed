@@ -20,7 +20,7 @@ struct ArticlesRequest {
 
 extension ArticlesRequest {
     static func defaultRequest() -> ArticlesRequest {
-        let defaultParameters = ["_limit": "20", "_sort": "publishedAt"]
+        let defaultParameters = ["_limit": "20"]
         return ArticlesRequest(parameters: defaultParameters)
     }
 }
