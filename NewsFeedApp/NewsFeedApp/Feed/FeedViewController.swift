@@ -43,8 +43,8 @@ class FeedViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
         tableView.reloadData()
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     // MARK: - Table setup
