@@ -33,14 +33,18 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
-        
+        title = "News feed"
         setupTable()
         
         let request = ArticlesRequest.defaultRequest()
         viewModel = FeedViewModel(request: request, delegate: self)
         
         viewModel.fetchArticles()
-        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        tableView.reloadData()
     }
     
     // MARK: - Table setup
@@ -85,6 +89,14 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.reuseIdentifier) as! ArticleCell
         cell.configure(with: viewModel.article(at: indexPath.row), viewModel: viewModel)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = viewModel.article(at: indexPath.row)
+        guard let url = URL(string: article.url) else { return }
+
+        let webviewVC = URLViewController(url: url)
+        navigationController?.pushViewController(webviewVC, animated: true)
     }
 }
 

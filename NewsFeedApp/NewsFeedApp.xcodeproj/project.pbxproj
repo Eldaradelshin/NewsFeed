@@ -22,6 +22,7 @@
 		6A38BC562689D83800F19485 /* ViewWithCornersAndShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38BC552689D83800F19485 /* ViewWithCornersAndShadow.swift */; };
 		6A38C14B268A365D00F19485 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38C14A268A365D00F19485 /* FeedViewModel.swift */; };
 		6A38C150268A5F7200F19485 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38C14F268A5F7200F19485 /* UIImageView+URL.swift */; };
+		6A38C157268AE9DC00F19485 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38C156268AE9DB00F19485 /* URLViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6A38BC552689D83800F19485 /* ViewWithCornersAndShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithCornersAndShadow.swift; sourceTree = "<group>"; };
 		6A38C14A268A365D00F19485 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		6A38C14F268A5F7200F19485 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		6A38C156268AE9DB00F19485 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				6A38BA85268911BA00F19485 /* FeedViewController.swift */,
 				6A38BABC2689AAD600F19485 /* ArticleCell.swift */,
+				6A38C156268AE9DB00F19485 /* URLViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A38C157268AE9DC00F19485 /* URLViewController.swift in Sources */,
 				6A38BC562689D83800F19485 /* ViewWithCornersAndShadow.swift in Sources */,
 				6A38BAA72689945C00F19485 /* ArticlesRequest.swift in Sources */,
 				6A38C14B268A365D00F19485 /* FeedViewModel.swift in Sources */,

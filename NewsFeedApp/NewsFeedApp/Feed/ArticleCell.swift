@@ -126,13 +126,33 @@ final class ArticleCell: UITableViewCell {
     }
     
     private func setupLayout() {
+        
         NSLayoutConstraint.activate([
             containerWithShadow.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             containerWithShadow.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-            containerWithShadow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            containerWithShadow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
+            
+            containerWithShadow.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
+        let widthConstraint = containerWithShadow.widthAnchor.constraint(equalToConstant: 400)
+       
+        let leadingOffset = containerWithShadow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
+        let trailingOffset = containerWithShadow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
+        
+        if UIDevice.current.orientation == .portrait {
+            NSLayoutConstraint.deactivate([widthConstraint])
+            NSLayoutConstraint.activate([
+                leadingOffset,
+                trailingOffset
+            ])
+        } else {
+            NSLayoutConstraint.activate([widthConstraint])
+            NSLayoutConstraint.deactivate([
+                leadingOffset,
+                trailingOffset
+            ])
+        }
+
         NSLayoutConstraint.activate([
             articleImage.topAnchor.constraint(equalTo: containerWithShadow.topAnchor),
             articleImage.leadingAnchor.constraint(equalTo: containerWithShadow.leadingAnchor),
